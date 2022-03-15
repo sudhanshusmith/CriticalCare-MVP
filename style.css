@@ -1,0 +1,295 @@
+
+
+/* border class to identfying the element that where it is overlapping or not */
+
+.black{
+    /* border: 2px solid black; */
+}
+
+.red{
+    /* border: 2px solid red; */
+}
+
+.green{
+    /* border: 2px solid green; */
+}
+
+.blue{
+    /* border: 2px solid blue; */
+}
+
+
+/* utilities classes */
+.section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* navigation bar codes start here */
+
+.logo{
+    color: white;
+    background-color: #2ecc71;
+}
+
+.left{
+    display: flex;
+    /* making display of left flex so that logo and company name appears in one line */
+    align-items: center;
+    /* align-items to make vertically center and apply it on which flex property have intialized */
+}
+
+.left img{
+    max-width: 60px;
+    /* always set max-width here and add img-fluid there to make responsive */
+    margin-right: 15px;
+}
+
+.right{
+    display: flex;
+    justify-content: end;
+    /* setting display to flex and it's properties to take ul to right side in large screen */
+}
+
+.right ul{
+    margin: 0;
+    padding: 0;
+    /* by default there is margin and padding in ul...just remove it */
+    list-style: none;
+    /* removing bullets */
+    display: flex;
+    align-items: center;
+    /* making ul flex and doing all li in one line with vertically center */
+}
+    
+
+.right ul li{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+
+
+.right li a {
+    color: white;
+    text-decoration: none;
+    /* removing underline */
+    padding: 4px 9px;
+    
+    
+}
+
+.right li a:hover {
+ background: #27ae60;
+ border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+/* adding background image by css and setting its opacity by pseudo selector */
+
+#main{
+ background: url('main-pic1.png') no-repeat, center,center/cover;
+ /* opacity: 0.9; */
+ /* opacity will give it whitish tone */
+ position: relative; 
+ /* by making position relative we are enabling to set opacity just above or below it     */
+ height: 80vh;
+
+}
+#main::after{           
+    /* you can do anything after or before pseudo selectors */
+    background:rgb(52, 73, 94);
+    opacity: 0.5;
+	content: "";
+	position: absolute;
+    /* by making position absolute it will take position with respect to its pahle wala class */
+	top: 0;
+	width: 100%;
+	height: 100%;
+    z-index: -1;
+}
+
+
+
+
+/* main section code starts from here */
+#main{
+    display: flex;
+    align-items: center;
+    color: white;
+    /* making flex to make the text vertically in center */
+}
+#main h1{
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+#main h1::after{
+    /* adding a horizontal line after the headings  */
+    background: #2ecc71;
+	content: "";
+	display: block;
+	width: 250px;
+	height: 3px;
+	margin-top: 15px;
+}
+
+#main h4{
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+
+.btn{
+    color: white;
+    background-color: #2ecc71;
+}
+
+.btn:hover{
+    background-color: #27ae60;
+    cursor: pointer;
+    color: white;
+}
+
+
+/* app downloading section starts here */
+#app{
+    background-color: #E3EFFF;
+
+}
+
+#app .apk-design{
+    max-height: 450px;
+    max-width: 450px;
+}
+
+#app .download{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#app h4{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+
+/* appending CSS code starts from here */
+
+/* CSS reset */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Footer CSS start here okay */
+footer{
+    background-color: #E9ECEF;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+footer p {
+    /* border: 2px solid white; */
+    font-size: 20px;
+    line-height: 27px;
+    padding: 5px auto;
+    margin: 6px auto;
+
+}
+
+.jumbotron{
+    background-color: #E9ECEF;
+}
+
+.ourservices{
+    display: flex;
+}
+
+/* Responsivness mediaQuery code starts from here */
+
+
+@media screen and (max-width: 768px) {
+    .left{
+        justify-content: center;
+    }
+
+    .right{
+        justify-content: center;
+
+    }
+
+    #main h1{
+        font-size: 2.4rem;
+    }
+
+    #main h4, .btn, #app h4{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .right li a{
+        padding: 0;
+        font-size: 20px;
+    }
+
+    .h3{
+        font-size: 25px;
+    }
+    #main h1{
+        font-size: 2.2rem;
+    }
+    #main h4, .btn, #app h4{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .right li a{
+        font-size: 10px;
+    }
+
+    #main h1{
+        font-size: 1.7rem;
+    }
+    #main h4, .btn, #app h4{
+        font-size: 0.9rem;
+    }
+
+    #main h1::after{
+        width: 150px;
+    }
+
+    #main{
+        height: 65vh;
+    }
+    #app img{
+        margin-bottom: 15px;
+    }
+
+    .section{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    #app h4{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
